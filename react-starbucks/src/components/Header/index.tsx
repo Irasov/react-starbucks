@@ -1,21 +1,22 @@
 import React from "react";
+import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   return (
-    <div className="root">
+    <div className={styles.root}>
       <div className="container">
-        <div className="body">
-          <a href="#" className="logo">
+        <div className={styles.body}>
+          <a href="#" className={styles.logo}>
             StarBucks
           </a>
-          <div className="icon">
+          <div className={styles.icon}>
             <span></span>
           </div>
-          <div className="nav">
-            <div className="menu">
-              <a href="#" className="item">Home</a>
-              <a href="#" className="item">Select</a>
-              <a href="#" className="item">Shop</a>
+          <div className={styles.nav}>
+            <div className={styles.menu}>
+              <a href="#" className={styles.item}>Home</a>
+              <a href="#" className={styles.item}>Select</a>
+              <a href="#" className={styles.item}>Shop</a>
             </div>
           </div>
         </div>

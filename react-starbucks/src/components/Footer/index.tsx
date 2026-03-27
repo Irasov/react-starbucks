@@ -1,92 +1,94 @@
 import React from "react";
+import styles from "./Footer.module.scss"
+import icon from "@/assets/img/instagram.png"
 
 const Footer: React.FC = () => {
   return (
-    <div className="root">
-      <div className="cntainer">
-        <div className="body">
-          <a href="#" className="logo">StarBucks</a>
-          <div className="nav">
-            <nav className="menu">
-              <ul className="group">
-                <li className="name">
+    <div className={styles.root}>
+      <div className="container">
+        <div className={styles.body}>
+          <div className={styles.block}>
+            <a href="#" className={styles.logo}>StarBucks</a>
+            <nav className={styles.menu}>
+              <ul className={styles.group}>
+                <li className={styles.name}>
                   Main
-                  <ul className="items">
-                    <li className="item">
-                      <a href="#" className="link">
+                  <ul className={styles.items}>
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Buy
                       </a>
                     </li>
-                    <li className="item">
-                      <a href="#" className="link">
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         More
                       </a>
                     </li>
                   </ul>
                 </li>
               </ul>
-              <ul className="group">
-                <li className="name">
+              <ul className={styles.group}>
+                <li className={styles.name}>
                   We Make
-                  <ul className="items">
-                    <li className="item">
-                      <a href="#" className="link">
+                  <ul className={styles.items}>
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Buy
                       </a>
                     </li>
                   </ul>
                 </li>
               </ul>
-              <ul className="group">
-                <li className="name">
+              <ul className={styles.group}>
+                <li className={styles.name}>
                   Products
-                  <ul className="items">
-                    <li className="item">
-                      <a href="#" className="link">
+                  <ul className={styles.items}>
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Cappuccino
                       </a>
                     </li>
-                    <li className="item">
-                      <a href="#" className="link">
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Fast
                       </a>
                     </li>
-                    <li className="item">
-                      <a href="#" className="link">
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Fast
                       </a>
                     </li>
                   </ul>
                 </li>
               </ul>
-              <ul className="group">
-                <li className="name">
+              <ul className={styles.group}>
+                <li className={styles.name}>
                   Events
-                  <ul className="items">
-                    <li className="item">
-                      <a href="#" className="link">
+                  <ul className={styles.items}>
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Drinks
                       </a>
                     </li>
-                    <li className="item">
-                      <a href="#" className="link">
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Eat
                       </a>
                     </li>
                   </ul>
                 </li>
               </ul>
-              <ul className="group">
-                <li className="name">
+              <ul className={styles.group}>
+                <li className={styles.name}>
                   Contacts
-                  <ul className="items">
-                    <li className="item">
-                      <a href="#" className="link">
+                  <ul className={styles.items}>
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Instagram
                       </a>
                     </li>
-                    <li className="item">
-                      <a href="#" className="link">
+                    <li className={styles.item}>
+                      <a href="#" className={styles.link}>
                         Number
                       </a>
                     </li>
@@ -94,29 +96,14 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             </nav>
-            <button className="up"></button>
+            <button className={styles.up}>UP</button>
           </div>
           <div className="extra">
-            <a href="tel:+7-999-999-99-99" className="tel">
+            <a href="tel:+7-999-999-99-99" className={styles.tel}>
               +7-999-999-99-99
             </a>
-            <a href="#" className="intagram">
-              <svg width="167" height="122" viewBox="0 0 167 122" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g filter="url(#filter0_f_44_130)">
-                  <ellipse cx="44.3946" cy="36.5443" rx="44.3946" ry="36.5443" transform="matrix(-1 0 0 1 127.831 39.042)" fill="url(#paint0_linear_44_130)" fillOpacity="0.15" />
-                </g>
-                <defs>
-                  <filter id="filter0_f_44_130" x="-2.67029e-05" y="-2.67029e-05" width="166.873" height="151.173" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                    <feGaussianBlur stdDeviation="19.521" result="effect1_foregroundBlur_44_130" />
-                  </filter>
-                  <linearGradient id="paint0_linear_44_130" x1="88.7892" y1="47.8051" x2="21.3525" y2="51.8099" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#237249" stopOpacity="0.55" />
-                    <stop offset="0.518493" stopColor="#35C66B" stopOpacity="0.73" />
-                  </linearGradient>
-                </defs>
-              </svg>
+            <a href="#" className={styles.intagram}>
+              <img src={icon} alt="instagram" className="icon"/>
             </a>
           </div>
         </div>

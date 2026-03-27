@@ -7,7 +7,7 @@ function App() {
     <div className="wrapper">
       <Header></Header>
       <div className="div">
-        HelloWord!!
+        <div className="mainpage">Hello Word!</div>
       </div>
       <Footer></Footer>
     </div>   

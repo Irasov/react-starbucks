@@ -1,3 +1,44 @@
 .root {
   
 }
+
+.body {
+  background-color: $bg-main;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  column-gap: 84px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 37px;
+  line-height: 109%;
+  letter-spacing: -0.03em;
+  background: linear-gradient(223deg, #237249 0%, #35c66b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: #bbb3b3;
+}
+
+.tel {
+  font-weight: 500;
+  font-size: 26px;
+  background: linear-gradient(245deg, #237249 0%, #35c66b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
