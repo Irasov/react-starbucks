@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.scss"
 import icon from "@/assets/img/instagram.png"
+import iconUp from "@/assets/img/up.png"
 
 const Footer: React.FC = () => {
   return (
@@ -96,7 +97,7 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             </nav>
-            <button className={styles.up}>UP</button>
+            <button className={styles.up}><img src={iconUp} alt="Up" className={styles.iconup} /></button>
           </div>
           <div className="extra">
             <a href="tel:+7-999-999-99-99" className={styles.tel}>
