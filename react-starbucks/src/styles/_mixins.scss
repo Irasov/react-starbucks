@@ -1,0 +1,25 @@
+@use './variables' as *; 
+
+@mixin title($size: 543px) {
+  max-width: $size;
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 109%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  & span {
+    background: linear-gradient(223deg, #237249 0%, #35c66b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@mixin text($size:555px) {
+  max-width: $size;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 163%;
+  letter-spacing: -0.02em;
+  color: $color-main;
+}

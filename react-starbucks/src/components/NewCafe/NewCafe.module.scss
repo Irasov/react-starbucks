@@ -1,0 +1,11 @@
+.body {
+  padding: 34px 0 31px 38px;
+  background: $bg-main;
+}
+.title {
+  @include title(543px);
+}
+
+.text {
+  @include text(555px);
+}

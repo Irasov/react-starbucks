@@ -40,7 +40,7 @@ html {
 body {
     font-family: $font-family;
     line-height: 1;
-    color: #000;
+    color: $color-main;
     background-color: #ffffff;
     &._lock{
         overflow: hidden;
