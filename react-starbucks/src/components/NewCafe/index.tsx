@@ -5,7 +5,7 @@ import lines from "@/assets/img/lines.png";
 
 const NewCafe: React.FC = () => {
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <div className="container">
         <div className={styles.body}>
           <div className={styles.upblock}>
@@ -55,7 +55,7 @@ const NewCafe: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
   )
 }

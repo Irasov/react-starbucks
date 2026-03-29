@@ -65,7 +65,7 @@
     font-size: 16px;
   }
   @media(max-width: 427.98px) {
-    padding: 5px 32px;
+    padding: 5px 30px;
     font-size: 16px;
   }
 }
@@ -95,6 +95,9 @@
 .properties {
   display: flex;
   column-gap: 46px;
+  @media(max-width: 719.98px) {
+    column-gap: 30px;
+  }
 }
 
 .property {
