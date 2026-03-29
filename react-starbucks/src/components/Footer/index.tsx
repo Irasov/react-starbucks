@@ -99,12 +99,12 @@ const Footer: React.FC = () => {
             </nav>
             <button className={styles.up}><img src={iconUp} alt="Up" className={styles.iconup} /></button>
           </div>
-          <div className="extra">
+          <div className={styles.extra}>
             <a href="tel:+7-999-999-99-99" className={styles.tel}>
               +7-999-999-99-99
             </a>
             <a href="#" className={styles.intagram}>
-              <img src={icon} alt="instagram" className="icon"/>
+              <img src={icon} alt="instagram" className={styles.icon}/>
             </a>
           </div>
         </div>
