@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
             <a href="tel:+7-999-999-99-99" className={styles.tel}>
               +7-999-999-99-99
             </a>
-            <a href="#" className={styles.intagram}>
+            <a href="#" className={styles.instagram}>
               <img src={icon} alt="instagram" className={styles.icon}/>
             </a>
           </div>

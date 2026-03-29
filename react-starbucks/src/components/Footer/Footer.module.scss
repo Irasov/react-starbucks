@@ -19,14 +19,29 @@
 
 .menu {
   display: flex;
+  position: relative;
   column-gap: 84px;
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 658px;
+    height: 308px;
+    border-radius: 100%;
+    background: rgba(217, 217, 217, 0.2);
+    filter: blur(306.985107421875px);
+    @media(max-width: 719.98px)  {
+      display: none;
+    }
+  }
   @media(max-width: 1179.98px)  {
     order: 1;
     flex: 1 1 100%;
     column-gap: 74px;
     row-gap: 30px;
     flex-wrap: wrap;
-}
+  }
 }
 
 .logo {
@@ -100,7 +115,27 @@
   }
 }
 
+.instagram {
+  position: relative;
+  &::before {
+    content: '';
+    width: 88px;
+    height: 73px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
+    filter: blur(39.04201889038086px);
+    @media(max-width: 719.98px)  {
+      width: 62px;
+      height: 62px;
+    }
+  }
+}
+
 .icon {
+  position: relative;
   @media(max-width: 719.98px)  {
      width: 32px;
   }
