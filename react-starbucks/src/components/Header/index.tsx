@@ -4,6 +4,7 @@ import styles from "./Header.module.scss";
 const Header: React.FC = () => {
   const [active, setActive] = React.useState(false);
   const iconClick = () => {
+    document.body.classList.toggle('_lock');
     setActive(!active);
   }
   return (

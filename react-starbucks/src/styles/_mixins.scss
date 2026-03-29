@@ -23,3 +23,15 @@
   letter-spacing: -0.02em;
   color: $color-main;
 }
+
+@mixin btn($padding: 20px 78px) {
+  padding: $padding;
+  border-radius: 83px;
+  font-weight: 639;
+  font-size: 24px;
+  line-height: 146%;
+  letter-spacing: -0.02em;
+  color: #fff;
+  background: linear-gradient(210deg, #237249 0%, #35c66b 100%);
+  cursor: pointer;
+}

@@ -1,5 +1,7 @@
 import React from "react";
-import styles from "./NewCafe.module.scss"
+import styles from "./NewCafe.module.scss";
+import coffee from "@/assets/img/coffee.png";
+import lines from "@/assets/img/lines.png";
 
 const NewCafe: React.FC = () => {
   return (
@@ -15,9 +17,41 @@ const NewCafe: React.FC = () => {
                 Have time to buy the most harmonious drinks in the 
                 new Starbucks coffee and don't forget about the discount!
               </p>
+              <div className={styles.buttons}>
+                <button className={styles.btn}>Select a Coffe</button>
+                <button className={styles.btnMore}>More</button>
+              </div>
+              <div className={styles.properties}>         
+                <div className={styles.property}>
+                  <p className={styles.property__count}>
+                    9K<span>+</span>
+                  </p>
+                  <p className={styles.property__text}>
+                    Premium Users
+                  </p>
+                </div>
+                <div className={styles.property}>
+                  <p className={styles.property__count}>
+                    2K<span>+</span>
+                  </p>
+                  <p className={styles.property__text}>
+                    Happy Customer
+                  </p>
+                </div>
+                <div className={styles.property}>
+                  <p className={styles.property__count}>
+                    28<span>+</span>
+                  </p>
+                  <p className={styles.property__text}>
+                    Awards Wining
+                  </p>
+                </div>
+              </div>
             </div>
-            
-          
+            <div className={styles.image}>
+              <img src={lines} alt="Lines" className={styles.lines} />
+              <img src={coffee} alt="Coffee" />
+            </div>
           </div>
         </div>
       </div>
