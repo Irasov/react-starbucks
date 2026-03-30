@@ -143,7 +143,7 @@
     &::after {
     content: '';
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 229px;
@@ -155,7 +155,7 @@
     &::before {
     content: '';
     position: absolute;
-    z-index: -1;
+    z-index: -10;
     right: 0;
     bottom: 0;
     width: 324px;
@@ -245,7 +245,7 @@
     width: 154px;
     height: 154px;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     left: -77px;
     top: -67px;
     background: url('@/assets/img/star.png') no-repeat;
@@ -275,6 +275,26 @@
         max-width: 50px;
         font-size: 18px;
       }
+    }
+  }
+
+  &::before {
+    width: 408px;
+    height: 327px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
+    filter: blur(177.12498474121094px);
+    @media(max-width: 719.98px) {
+      width: 166px;
+      height: 132px;
+      top: -65px;
+      left: auto;
+      right: -80px;
     }
   }
 
