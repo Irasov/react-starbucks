@@ -2,6 +2,9 @@ import React from "react";
 import styles from "./NewCafe.module.scss";
 import coffee from "@/assets/img/coffee.png";
 import lines from "@/assets/img/lines.png";
+import tasty from "@/assets/img/tasty.png";
+import fast from "@/assets/img/fast.png";
+import available from "@/assets/img/available.png";
 
 const NewCafe: React.FC = () => {
   return (
@@ -53,6 +56,32 @@ const NewCafe: React.FC = () => {
               <img src={coffee} alt="Coffee" />
             </div>
           </div>
+          <div className={styles.downBlock}>
+            <div className={styles.downBlock__item}>
+                <img src={tasty} alt="Tasty" className={styles.downBlock__img} />
+                <h3 className={styles.downBlock__title}>Tasty</h3>
+                <p className={styles.downBlock__subtitle}>
+                  We have the most delicious coffee
+                </p>
+            </div>
+            <div className={styles.downBlock__item}>
+                <img src={fast} alt="Fast" className={styles.downBlock__img} />
+                <h3 className={styles.downBlock__title}>Fast</h3>
+                <p className={styles.downBlock__subtitle}>
+                  Our cafe will serve you quickly
+                </p>
+            </div>
+            <div className={styles.downBlock__item}>
+                <img src={available} alt="Available" className={styles.downBlock__img} />
+                <h3 className={styles.downBlock__title}>Available</h3>
+                <p className={styles.downBlock__subtitle}>
+                  Cafe will serveat the most pleasant prices
+                </p>
+            </div>
+            <div className={styles.downBlock__star}>
+              <p>WE HAVE</p>
+            </div>
+          </ div>
         </div>
       </div>
     </section>

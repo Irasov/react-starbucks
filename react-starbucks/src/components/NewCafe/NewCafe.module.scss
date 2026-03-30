@@ -3,12 +3,14 @@
   background: $bg-main;
   position: relative;
   z-index: 1;
+  row-gap: 112px;
   @media(max-width: 582.98px)  {
     padding: 0px 25px;
   }
 }
 
 .upblock {
+  padding: 0 0 112px 0;
   display: flex;
   justify-content: space-between;
   @media(max-width: 1179.98px)  {
@@ -180,6 +182,108 @@
   }
   @media(max-width: 1179.98px)  {
     transform: translate(0, 0);
+  }
+}
+
+.downBlock {
+  display: flex;
+  margin: 0 auto;
+  padding: 51px 78px 36px 78px;
+  max-width: 1029px;
+  z-index: 1;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 46px;
+  background: linear-gradient(230deg, #fff 3.94%, #e5e5e5 64.08%, #fbfbfb 88.62%);
+
+  &__item {
+    flex: 0 1 227px;
+    max-width: 227px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media(max-width: 719.98px) {
+       flex: 0 1 169px;
+       max-width: 169px;
+    }
+  }
+
+  &__img {
+    margin: 0 0 9px 0;
+    width: 100%;
+    @media(max-width: 719.98px) {
+      width: 127px;
+    }
+  }
+
+  &__title {
+    margin:0 0 4px 0;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 163%;
+    letter-spacing: -0.02em;
+    color: #121517;
+    @media(max-width: 719.98px) {
+      font-size: 18px;
+    }
+  }
+  &__subtitle{
+    max-width: 210px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 163%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: rgba(18, 21, 23, 0.9);
+    @media(max-width: 719.98px) {
+      font-size: 11px;
+    }
+  }
+
+  &__star {
+    padding: 35px 0px;
+    width: 154px;
+    height: 154px;
+    position: absolute;
+    z-index: 2;
+    left: -77px;
+    top: -77px;
+    background: url('@/assets/img/star.png') no-repeat;
+    background-position: center;
+    object-fit: scale-down;
+    display: flex;
+    justify-content: center;
+    @media(max-width: 719.98px) {
+      left: 200px;
+      top: -40px;
+      padding: 28px 0 0 15px;
+      width: 93px;
+      height: 93px;
+      background: url('@/assets/img/star2.png') no-repeat;
+
+    }
+    & p {
+      max-width: 99px;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 86%;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+      @media(max-width: 719.98px) {
+        max-width: 50px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media(max-width: 719.98px) {
+    padding: 29px 42px;
+    max-width: 260px;
+    flex-direction: column;
+    align-items: center;
+
   }
 }
 
