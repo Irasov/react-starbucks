@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [active, setActive] = React.useState(false);
@@ -11,12 +12,12 @@ const Header: React.FC = () => {
     <div className={styles.root}>
       <div className="container">
         <div className={styles.body}>
-          <a href="#" className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             StarBucks
-          </a>
+          </Link>
           <div className={`${styles.nav} ${active ? styles.active: ''}`} >
             <div className={styles.menu}>
-              <a href="#" className={styles.item}>Home</a>
+              <Link to="/" className={styles.item}>Home</Link>
               <a href="#" className={styles.item}>Select</a>
               <a href="#" className={styles.item}>Shop</a>
             </div>

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.scss"
 import icon from "@/assets/img/instagram.png"
 import iconUp from "@/assets/img/up.png"
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className={styles.body}>
           <div className={styles.block}>
-            <a href="#" className={styles.logo}>StarBucks</a>
+            <Link to="/" className={styles.logo}>StarBucks</Link>
             <nav className={styles.menu}>
               <ul className={styles.group}>
                 <li className={styles.name}>
