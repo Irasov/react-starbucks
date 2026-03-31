@@ -93,4 +93,10 @@
       font-size: 14px;
     }
   }
+  &__lines {
+    position: absolute;
+    z-index: -1;
+    top: -220px;
+    right: -150px;
+  }
 }

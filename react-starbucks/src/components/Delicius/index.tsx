@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Delicius.module.scss";
 import interior from "@/assets/img/interior.png";
 import coocking from "@/assets/img/coocking.png";
+import lines from "@/assets/img/lines2.png";
 
 const Delicius: React.FC = () => {
   return (
@@ -29,9 +30,10 @@ const Delicius: React.FC = () => {
                 <img src={coocking} alt="coocking" className={styles.coocking__img} />
                 <button className={styles.coocking__btn}>
                   <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.889465 13.3246L0.889465 1.56775L10.7205 7.44568L0.889465 13.3246Z" stroke="white" stroke-width="1.77899" stroke-miterlimit="1.55572" />
+                    <path d="M0.889465 13.3246L0.889465 1.56775L10.7205 7.44568L0.889465 13.3246Z" stroke="white" strokeWidth="1.77899" strokeMiterlimit="1.55572" />
                   </svg> Cooking Process
                 </button>
+                <img src={lines} alt="lines" className={styles.coocking__lines} />
               </div>
             </div>
           </div>
