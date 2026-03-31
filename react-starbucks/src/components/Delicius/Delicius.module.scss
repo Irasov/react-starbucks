@@ -11,6 +11,19 @@
 .interior {
   max-width: 548px;
   position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 289px;
+    height: 245px;
+    border-radius: 100%;
+    background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
+    filter: blur(145.59999084472656px);
+  }
   &__image {
     max-width: 548px;
   }
@@ -54,6 +67,7 @@
 
 .coocking {
   display: flex;
+  position: relative;
   flex-direction: column;
   row-gap: 63px;
   align-items: flex-start;  
@@ -98,5 +112,17 @@
     z-index: -1;
     top: -220px;
     right: -150px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 309px;
+    height: 267px;
+    border-radius: 100%;
+    background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
+    filter: blur(144.62498474121094px);
   }
 }
