@@ -1,6 +1,6 @@
 import {createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { Status, type CoffeeSliceStatee, type Coffee} from './types';
-import { fetchCoffee } from './AsyncAction';
+import { fetchCoffee } from './asyncAction';
 
 const initialState: CoffeeSliceStatee = {
   items: [],
