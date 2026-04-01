@@ -19,7 +19,7 @@ const Header: React.FC = () => {
             <div className={styles.menu}>
               <Link to="/" className={styles.item}>Home</Link>
               <a href="#" className={styles.item}>Select</a>
-              <a href="#" className={styles.item}>Shop</a>
+              <Link to="/shop" className={styles.item}>Shop</Link>
             </div>
           </div>
           <div className={`${styles.icon} ${active ? styles.active : ''}`} onClick={iconClick}>
