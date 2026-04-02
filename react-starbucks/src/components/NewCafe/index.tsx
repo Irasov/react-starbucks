@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./NewCafe.module.scss";
 import coffee from "@/assets/img/coffee.png";
 import lines from "@/assets/img/lines.png";
@@ -22,7 +23,7 @@ const NewCafe: React.FC = () => {
               </p>
               <div className={styles.buttons}>
                 <button className={styles.btn}>Select a Coffe</button>
-                <button className={styles.btnMore}>More</button>
+                <Link to="/shop" className={styles.btnMore}>More</Link>
               </div>
               <div className={styles.properties}>         
                 <div className={styles.property}>

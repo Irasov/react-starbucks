@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './CoffeBlock.module.scss';
-import { Navigate } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/store';
 import { fetchCoffee } from '../../redux/coffee/asyncAction';
 import { useSelector } from 'react-redux';
@@ -9,7 +8,6 @@ import CoffeCard from './CoffeCard';
 import { Status } from '../../redux/coffee/types';
 
 const CoffeBlock: React.FC = () => {
-  const isMounted = React.useRef(false);
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectCoffeeData);
   const getCoffee = async () => {
@@ -19,7 +17,6 @@ const CoffeBlock: React.FC = () => {
       getCoffee();
   },[])
 
-  console.log(items, status);
   const coffee = items.map((obj) => <CoffeCard key={obj.id} {...obj} />);
 
   return (
