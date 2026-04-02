@@ -20,8 +20,8 @@ const CoffeCard: React.FC<CoffeeBlockProps> = ({id, imageUrl, title, sizes, pric
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.text}>{text}</p>
       <div className={styles.info}>
-        <span className={styles.price}>{price}</span>
-        <span className={styles.size}>{sizes}</span>
+        <span className={styles.price}>{price}$</span>
+        <span className={styles.size}>{sizes} ml</span>
       </div>
       <button className={styles.btn}>Buy Product</button>
     </div>

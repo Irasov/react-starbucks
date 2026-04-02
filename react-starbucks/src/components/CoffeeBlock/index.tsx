@@ -1,14 +1,36 @@
-import React from "react";
-import styles from './CoffeBlock.module.scss'
+import React from 'react';
+import styles from './CoffeBlock.module.scss';
+import { Navigate } from 'react-router-dom';
+import { useAppDispatch } from '../../redux/store';
+import { fetchCoffee } from '../../redux/coffee/asyncAction';
+import { useSelector } from 'react-redux';
+import { selectCoffeeData } from '../../redux/coffee/selectors';
+import CoffeCard from './CoffeCard';
+import { Status } from '../../redux/coffee/types';
 
 const CoffeBlock: React.FC = () => {
+  const isMounted = React.useRef(false);
+  const dispatch = useAppDispatch();
+  const { items, status } = useSelector(selectCoffeeData);
+  const getCoffee = async () => {
+    dispatch(fetchCoffee());
+  };
+  React.useEffect(()=>{
+      getCoffee();
+  },[])
+
+  console.log(items, status);
+  const coffee = items.map((obj) => <CoffeCard key={obj.id} {...obj} />);
+
   return (
     <div className={styles.root}>
       <div className="container">
-        
+        <div className={styles.body}>
+          {status == Status.ERROR ? <div>ERROR</div> : <div className={styles.items}>{coffee}</div> }
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CoffeBlock;
