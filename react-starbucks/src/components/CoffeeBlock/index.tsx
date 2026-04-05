@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styles from './CoffeBlock.module.scss';
 import { useAppDispatch } from '../../redux/store';
 import { fetchCoffee } from '../../redux/coffee/asyncAction';
@@ -7,7 +7,7 @@ import { selectCoffeeData } from '../../redux/coffee/selectors';
 import CoffeCard from './CoffeCard';
 import { Status } from '../../redux/coffee/types';
 import Skeleton from './Skeleton';
-import MyPagimation from '../MyPagimation';
+import MyPagimation from '../MyPagination';
 
 const CoffeBlock: React.FC = () => {
   const dispatch = useAppDispatch();
