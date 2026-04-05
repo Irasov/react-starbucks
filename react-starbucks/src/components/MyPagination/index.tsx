@@ -1,43 +1,39 @@
-import styles from './MyPagination.module.scss'
-import React from 'react';
+import React from "react";
+import MyPaginationComponent from "./MyPaginationComponent";
 
-type PaginationProps = {
-  onNextPageClick: () => void;
-  onPrevPageClick: () => void;
-  disable: {
-    left: boolean;
-    right: boolean;
-  };
-  nav?: {
-    current: number;
-    total: number;
-  }
+type PagProps = {
+  page: number,
+  setPage: (arg:number) => void
+}
+const MyPagination = (props:PagProps) => {
+
+    const COUNT_PAGE = 3;
+    const ONE_PAGE = 1;
+
+    const handleNextPageClick = React.useCallback(() => {
+      const current = props.page;
+      const next = current + 1;
+      const total = 3;
+      props.setPage( next <= total ? next : current); 
+    }, [props.page]);
+  
+    const handlePrevPageClick = React.useCallback(() => {
+      const current = props.page;
+      const prev = current - 1;
+      props.setPage( prev > 0 ? prev : current); 
+    }, [props.page]);
+
+    return (
+      <MyPaginationComponent 
+        onNextPageClick = {handleNextPageClick}
+        onPrevPageClick = {handlePrevPageClick}
+        disable = {{
+          left: props.page === ONE_PAGE,
+          right: props.page === COUNT_PAGE,
+        }}
+        nav = {{current: props.page, total: COUNT_PAGE}}
+      />
+    )
 }
 
-const MyPagination = (props: PaginationProps) => {
-  const { nav = null, disable, onNextPageClick, onPrevPageClick } = props;
-
-  const handleNextPageClick = () => {
-    onNextPageClick();
-  } 
-  const handlePrevPageClick = () => {
-    onPrevPageClick();
-  }
-  return (
-    <div className={styles.root}>
-      <button className={styles.arrow} onClick={handlePrevPageClick} disabled={disable.left}>
-        {'<'}
-      </button>
-      {nav && (
-        <span className={styles.navigation}>
-         {nav?.current} / {nav?.total}
-        </span>
-      )}
-      <button className={styles.arrow} onClick={handleNextPageClick} disabled={disable.right}>
-        {'>'}
-      </button>
-    </div>
-  )
-}
-
-export default React.memo(MyPagination);
+export default MyPagination;
