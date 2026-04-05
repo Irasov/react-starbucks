@@ -4,4 +4,7 @@
   row-gap: 30px;
   column-gap: 20px;
   flex-wrap: wrap;
+  @media(max-width: 554.98px) {
+    justify-content: center;
+  }
 }
