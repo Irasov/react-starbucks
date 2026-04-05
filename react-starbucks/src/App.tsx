@@ -6,7 +6,6 @@ import Shop from "./pages/Shop"
 function App() {
 
   return (
-    <div className="wrapper">
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="" element={<Home />} />
@@ -14,8 +13,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </div>   
-
       )
   }
 

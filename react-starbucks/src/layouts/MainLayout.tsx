@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const MainLayout: React.FC = () => {
   return (
-    <div className="wrappe">
+    <div className="wrapper">
       <Header />
       <Outlet />
       <Footer />

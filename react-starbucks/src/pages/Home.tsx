@@ -4,10 +4,10 @@ import Delicius from "../components/Delicius";
 
 const Home: React.FC = () => {
   return (
-    <div className="mainpage">
+    <main className="mainpage">
       <NewCafe />
       <Delicius />
-    </div>
+    </main>
   )
 }
 
