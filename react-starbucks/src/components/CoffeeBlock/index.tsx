@@ -8,6 +8,7 @@ import CoffeCard from './CoffeCard';
 import { Status } from '../../redux/coffee/types';
 import Skeleton from './Skeleton';
 import MyPagination from '../MyPagination';
+import Search from '../Search';
 
 const CoffeBlock: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -28,6 +29,7 @@ const CoffeBlock: React.FC = () => {
     <div className={styles.root}>
       <div className="container">
         <div className={styles.body}>
+          <Search />
           {status == Status.ERROR ? <div>ERROR</div> : <div className={styles.items}>
              {status === 'loading' ? skeletons : coffee}
           </div> }

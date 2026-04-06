@@ -1,0 +1,40 @@
+.root {
+  padding: 15px 0 35px 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.wrapper {
+  position: relative;
+  flex: 0 1 400px;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 8px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    background: url('@/assets/img/find.png') no-repeat;
+    background-position: center;
+    background-size: contain; 
+    opacity: 0.6;
+  }
+  
+}
+
+.search {
+  width: 100%;
+  padding: 10px 15px 10px 45px;
+  border: 3px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 24px;
+  &:focus {
+    outline: none;
+    border-color: #237249;
+    & .wrapper::before {
+      opacity: 1;
+    } 
+  }
+}
