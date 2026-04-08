@@ -22,6 +22,7 @@ export interface CoffeeSliceStatee {
 }
 
 export type SearchCoffeeParams = {
+  search: string;
   currentPage: string;
 }
 

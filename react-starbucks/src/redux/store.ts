@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import coffee from './coffee/slice'
+import filter from './filter/slice';
 
 export const store = configureStore({
-  reducer: { coffee }
+  reducer: { coffee, filter }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

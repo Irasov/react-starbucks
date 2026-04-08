@@ -9,18 +9,26 @@ import { Status } from '../../redux/coffee/types';
 import Skeleton from './Skeleton';
 import MyPagination from '../MyPagination';
 import Search from '../Search';
+import { selectFilter } from '../../redux/filter/selectors';
+import { setCurrentPage } from '../../redux/filter/slice';
 
 const CoffeBlock: React.FC = () => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectCoffeeData);
-  const [page, setPage] = React.useState(1);
+  const { searchValue, currentPage } = useSelector(selectFilter);
 
-  const getCoffee = async (page:number) => {
-    dispatch(fetchCoffee({currentPage: String(page)}));
+  const onChangePage = (page: number) => {
+    dispatch(setCurrentPage(page));
+  }
+
+  const getCoffee = async () => {
+    const search = searchValue ? `&search=${searchValue}` : ''
+    dispatch(fetchCoffee({search, currentPage: String(currentPage)}));
   };
-  React.useEffect(()=>{
-      getCoffee(page);
-  },[page])
+  
+  React.useEffect(() => {
+      getCoffee();
+  },[searchValue, currentPage]);
 
   const coffee = items.map((obj) => <CoffeCard key={obj.id} {...obj} />);
   const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />)
@@ -33,7 +41,7 @@ const CoffeBlock: React.FC = () => {
           {status == Status.ERROR ? <div>ERROR</div> : <div className={styles.items}>
              {status === 'loading' ? skeletons : coffee}
           </div> }
-          <MyPagination  page={page} setPage={setPage} />
+          <MyPagination  page={currentPage} setPage={onChangePage} />
         </div>
       </div>
     </div>
