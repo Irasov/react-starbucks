@@ -11,11 +11,16 @@ import MyPagination from '../MyPagination';
 import Search from '../Search';
 import { selectFilter } from '../../redux/filter/selectors';
 import { setCurrentPage } from '../../redux/filter/slice';
+import { useNavigate } from 'react-router-dom';
+import qs from 'qs';
 
 const CoffeBlock: React.FC = () => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectCoffeeData);
   const { searchValue, currentPage } = useSelector(selectFilter);
+  const navigate = useNavigate();
+  const isSearch = React.useRef(false);
+  const isMounted = React.useRef(false);
 
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
@@ -25,9 +30,20 @@ const CoffeBlock: React.FC = () => {
     const search = searchValue ? `&search=${searchValue}` : ''
     dispatch(fetchCoffee({search, currentPage: String(currentPage)}));
   };
+
+  React.useEffect(() => {
+    if(isMounted.current) {
+      const queryString = qs.stringify({currentPage})
+      navigate(`?${queryString}`);
+    }
+    isMounted.current = true;
+  }, [currentPage,searchValue]);
   
   React.useEffect(() => {
+    if(!isSearch.current) {
       getCoffee();
+    }
+    isSearch.current = false;
   },[searchValue, currentPage]);
 
   const coffee = items.map((obj) => <CoffeCard key={obj.id} {...obj} />);
