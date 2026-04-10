@@ -5,12 +5,12 @@ import { fetchCoffee } from '../../redux/coffee/asyncAction';
 import { useSelector } from 'react-redux';
 import { selectCoffeeData } from '../../redux/coffee/selectors';
 import CoffeCard from './CoffeCard';
-import { Status } from '../../redux/coffee/types';
+import { Status, type SearchCoffeeParams } from '../../redux/coffee/types';
 import Skeleton from './Skeleton';
 import MyPagination from '../MyPagination';
 import Search from '../Search';
 import { selectFilter } from '../../redux/filter/selectors';
-import { setCurrentPage } from '../../redux/filter/slice';
+import { setCurrentPage, setFilter } from '../../redux/filter/slice';
 import { useNavigate } from 'react-router-dom';
 import qs from 'qs';
 
@@ -38,6 +38,19 @@ const CoffeBlock: React.FC = () => {
     }
     isMounted.current = true;
   }, [currentPage,searchValue]);
+
+  React.useEffect(() => {
+    if(window.location.search) {
+      const pararms = qs.parse(window.location.search.substring(1)) as unknown as SearchCoffeeParams;
+      dispatch(
+        setFilter({
+          searchValue: pararms.search,
+          currentPage: Number(pararms.currentPage),
+        })
+    );
+      isSearch.current = true;
+    }
+  },[]);
   
   React.useEffect(() => {
     if(!isSearch.current) {
