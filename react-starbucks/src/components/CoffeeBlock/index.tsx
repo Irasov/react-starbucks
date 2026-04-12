@@ -9,6 +9,7 @@ import { Status, type SearchCoffeeParams } from '../../redux/coffee/types';
 import Skeleton from './Skeleton';
 import MyPagination from '../MyPagination';
 import Search from '../Search';
+import Sort from '../Sort';
 import { selectFilter } from '../../redux/filter/selectors';
 import { setCurrentPage, setFilter } from '../../redux/filter/slice';
 import { useNavigate } from 'react-router-dom';
@@ -67,6 +68,7 @@ const CoffeBlock: React.FC = () => {
       <div className="container">
         <div className={styles.body}>
           <Search />
+          <Sort />
           {status == Status.ERROR ? <div>ERROR</div> : <div className={styles.items}>
              {status === 'loading' ? skeletons : coffee}
           </div> }
