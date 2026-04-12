@@ -22,6 +22,8 @@ export interface CoffeeSliceStatee {
 }
 
 export type SearchCoffeeParams = {
+  sort: string;
+  order: string;
   search: string;
   currentPage: string;
 }

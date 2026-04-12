@@ -9,7 +9,7 @@ import { Status, type SearchCoffeeParams } from '../../redux/coffee/types';
 import Skeleton from './Skeleton';
 import MyPagination from '../MyPagination';
 import Search from '../Search';
-import Sort from '../Sort';
+import Sort, { sortList } from '../Sort';
 import { selectFilter } from '../../redux/filter/selectors';
 import { setCurrentPage, setFilter } from '../../redux/filter/slice';
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +18,7 @@ import qs from 'qs';
 const CoffeBlock: React.FC = () => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectCoffeeData);
-  const { searchValue, currentPage } = useSelector(selectFilter);
+  const { searchValue, currentPage, sort, order } = useSelector(selectFilter);
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
@@ -28,17 +28,20 @@ const CoffeBlock: React.FC = () => {
   }
 
   const getCoffee = async () => {
-    const search = searchValue ? `&search=${searchValue}` : ''
-    dispatch(fetchCoffee({search, currentPage: String(currentPage)}));
+    const search = searchValue ? `&search=${searchValue}` : '';
+    const orderBy = order ? order : 'asc';
+    const sortBy = sort.sortProperty ? sort.sortProperty : '';
+
+    dispatch(fetchCoffee({search, currentPage: String(currentPage), sort: sortBy, order: orderBy}));
   };
 
   React.useEffect(() => {
     if(isMounted.current) {
-      const queryString = qs.stringify({currentPage})
+      const queryString = qs.stringify({sortBy:sort.sortProperty ,order, currentPage});
       navigate(`?${queryString}`);
     }
     isMounted.current = true;
-  }, [currentPage,searchValue]);
+  }, [currentPage, searchValue, sort, order]);
 
   React.useEffect(() => {
     if(window.location.search) {
@@ -47,6 +50,8 @@ const CoffeBlock: React.FC = () => {
         setFilter({
           searchValue: pararms.search,
           currentPage: Number(pararms.currentPage),
+          sort: sort || sortList[0],
+          order: order || 'asc',
         })
     );
       isSearch.current = true;
@@ -58,7 +63,7 @@ const CoffeBlock: React.FC = () => {
       getCoffee();
     }
     isSearch.current = false;
-  },[searchValue, currentPage]);
+  },[searchValue, currentPage, sort, order]);
 
   const coffee = items.map((obj) => <CoffeCard key={obj.id} {...obj} />);
   const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />)
@@ -68,7 +73,7 @@ const CoffeBlock: React.FC = () => {
       <div className="container">
         <div className={styles.body}>
           <Search />
-          <Sort />
+          <Sort value={sort} />
           {status == Status.ERROR ? <div>ERROR</div> : <div className={styles.items}>
              {status === 'loading' ? skeletons : coffee}
           </div> }

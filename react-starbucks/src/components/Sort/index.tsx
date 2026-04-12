@@ -1,21 +1,59 @@
 import React from "react";
 import styles from './Sort.module.scss';
+import { useDispatch } from "react-redux";
+import { setOrder, setSort } from "../../redux/filter/slice";
+import type { SortAscDescValue, SortPropertyValue } from "../../redux/filter/types";
+import { SortProperty, SortAscDesc, type SortType} from "../../redux/filter/types";
+
+type SortItem = {
+  name: string;
+  sortProperty: SortPropertyValue;
+}
+
+type SortProps = {
+  value: SortType;
+}
 
 export const sortList = [
-  {name: 'PRICE', sortProperty: 'price'},
-  {name: 'SIZE', sortProperty: 'size'},
-  {name: 'CATEGORY', sortProperty: 'category'},
+  {name: 'PRICE', sortProperty: SortProperty.PRICE},
+  {name: 'SIZE', sortProperty: SortProperty.SIZE},
+  {name: 'CATEGORY', sortProperty: SortProperty.CATEGORY},
 ]
 
-const Sort: React.FC = () => {
+const Sort: React.FC<SortProps> = React.memo(({ value }) => {
   const [open, setOpen] = React.useState(false);
   const [ascDesc, setAscDesc] = React.useState(false);
   const sortRef = React.useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
+
+ const updateOrder = React.useCallback((order: SortAscDescValue) => {
+    dispatch(setOrder(order));
+ },[]);
+
+ const clickAscDesc = () => {
+  setAscDesc(!ascDesc);
+  updateOrder(ascDesc ?  SortAscDesc.ASC : SortAscDesc.DESC);
+ }
+
+ const onClickItem = (obj: SortItem) => {
+  dispatch(setSort(obj));
+  setOpen(false);
+ }
+
+ React.useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (sortRef.current && !event.composedPath().includes(sortRef.current)) {
+      setOpen(false);
+    }
+  };
+  document.body.addEventListener('click', handleClickOutside);
+  return () => document.body.removeEventListener('click', handleClickOutside);
+ }, []);
 
   return (
     <div className={styles.root}>
       <div className={styles.sort}>
-        <div className={styles.arrowBlock} onClick={()=> setAscDesc(!ascDesc)}>
+        <div className={styles.arrowBlock} onClick={clickAscDesc}>
           <svg
             className={`${styles.arrow} ${ascDesc ? styles.arrow_dsc : ''}`}
             width="10"
@@ -31,14 +69,14 @@ const Sort: React.FC = () => {
         </div>
         <div className={styles.sorting} onClick={() => setOpen(!open)} ref={sortRef}>
           <span className={styles.sorting__title}>Sorting:</span>
-          <span className={styles.sorting__value}>PRICE</span>
+          <span className={styles.sorting__value}>{value.name}</span>
         </div>
         {open && (
           <div className={styles.popup}>
             <ul className={styles.items}>
               {
                 sortList.map((obj,index) => (
-                  <li className={styles.item} key={index}>{obj.name}</li>
+                  <li className={styles.item} onClick={() => onClickItem(obj)} key={index}>{obj.name}</li>
                 ))
               }
             </ul>
@@ -47,7 +85,7 @@ const Sort: React.FC = () => {
       </div>
     </div>
   )
-}
+});
 
 export default Sort;
 
