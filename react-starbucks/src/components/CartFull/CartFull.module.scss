@@ -1,0 +1,32 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  &__btn {
+    padding: 5px 20px;
+    display: flex;
+    column-gap: 10px;
+    border-radius: 30px;
+    background-color: #237249;
+    cursor: pointer;
+    span {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+} 
+
+.text {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  &__name {
+    font-size: 18px;
+  }
+}
+
+.block {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}

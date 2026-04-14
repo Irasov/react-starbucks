@@ -1,12 +1,13 @@
 import React from "react";
+import CartFull from "../components/CartFull";
 
 const Cart: React.FC = () => {
   return (
-    <>
-      <h1>
-        СART CART CART
-      </h1>
-    </>
+    <main className="mainpage">
+      <div className="container">
+        <CartFull />
+      </div>
+    </main>
   )
 }
 

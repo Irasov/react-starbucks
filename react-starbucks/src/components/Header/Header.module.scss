@@ -53,6 +53,9 @@ a {
 .menu {
   display: flex;
   column-gap: 94px;
+   @media(max-width: 799.98px) {
+      column-gap: 54px;
+   }
    @media(max-width: 719.98px) {
     flex-direction: column;
     padding: 180px 0;
@@ -117,4 +120,12 @@ a {
 .icon.active::after {
   bottom: 50%;
   transform: rotate(-45deg) translate(0px, 50%);
+}
+
+.btn {
+  padding: 10px 20px;
+  display: flex;
+  column-gap: 5px;
+  border-radius: 30px;
+  background-color: $green;
 }
