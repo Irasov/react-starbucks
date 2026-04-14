@@ -43,7 +43,7 @@ const Header: React.FC = () => {
             <div className={styles.menu}>
               <Link to="/" className={styles.item} onClick={active ? iconClick : undefined}>Home</Link>
               <Link to="/shop" className={styles.item} onClick={active ? iconClick : undefined}>Shop</Link>
-              <a href="#" className={styles.item}>Select</a>
+              <Link to="/cart" className={styles.item} onClick={active ? iconClick : undefined}>Cart</Link>
             </div>
           </div>
           <div className={`${styles.icon} ${active ? styles.active : ''}`} onClick={iconClick}>
