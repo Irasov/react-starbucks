@@ -26,7 +26,24 @@
 }
 
 .block {
-  padding: 10px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  &__btnBack {
+    padding: 5px 20px;
+    background: $color-main;
+    text-decoration: none;
+    color: $green;
+    border-radius: 30px;
+    font-weight: 800;
+  }
+  &__btnPay {
+    padding: 10px 25px;
+    background: $green;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+  }
 }
