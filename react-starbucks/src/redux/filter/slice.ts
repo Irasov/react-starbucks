@@ -15,8 +15,8 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setSearchValue: (statem, action: PayloadAction<string>) => {
-      statem.searchValue = action.payload;
+    setSearchValue: (state, action: PayloadAction<string>) => {
+      state.searchValue = action.payload;
     },
     setCurrentPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
