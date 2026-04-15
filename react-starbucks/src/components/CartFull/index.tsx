@@ -39,10 +39,18 @@ const CartFull: React.FC = () => {
         }
       </div>
       <div className={styles.block}>
-        <Link to='/' className={styles.block__btnBack}>
+        <Link to='/shop' className={styles.block__btnBack}>
           {'<'} Go back
         </Link>
         <button className={styles.block__btnPay}>Pay</button>
+      </div>
+      <div className={styles.total}>
+        <span className={styles.total__count}>
+        Total count:   <i>{totalCount}</i>
+        </span>
+        <span className={styles.total__price}>
+          Total price: <i>{totalPrice.toFixed(2)} $</i>
+        </span>
       </div>
     </div>
   )
