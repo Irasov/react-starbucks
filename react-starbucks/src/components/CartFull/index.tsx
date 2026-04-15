@@ -1,8 +1,15 @@
 import React from "react";
 import styles from "./CartFull.module.scss";
 import { Link } from "react-router-dom";
+import CoffeeItem from "../CoffeeItem";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCart } from "../../redux/cart/selectors";
 
 const CartFull: React.FC = () => {
+  const dispatch = useDispatch();
+  const { items, totalPrice } = useSelector(selectCart); 
+  const totalCount = items.reduce((sum: number, item) => sum + item.count, 0);
+
   return (
     <div className="root">
       <div className={styles.title}>
@@ -25,7 +32,11 @@ const CartFull: React.FC = () => {
         </button>
       </div>
       <div className="items">
-        
+        {
+          items.map((item) => {
+            return <CoffeeItem key={item.id} {...item} />
+          })
+        }
       </div>
       <div className={styles.block}>
         <Link to='/' className={styles.block__btnBack}>

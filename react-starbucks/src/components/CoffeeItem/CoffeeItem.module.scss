@@ -1,0 +1,48 @@
+.item {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  @media(max-width: 719.98px) {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+  }
+  &__image {
+    max-width: 120px;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-self: center;
+    font-size: 24px;
+  }
+  &__blockCount {
+    display: flex;
+    column-gap: 5px;
+    align-self: center;
+    font-size: 24px;
+    align-items: center;
+    column-gap: 15px;
+  }
+  &__btn {
+    padding: 10px;
+    background: transparent;  
+    border: 1px solid $green;
+    border-radius: 100%;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &__blockPrice {
+    font-size: 24px;
+    align-self: center;
+  }
+  &__remove {
+    align-self: center;
+  }
+}

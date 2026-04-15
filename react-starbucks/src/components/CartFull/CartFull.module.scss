@@ -40,10 +40,11 @@
   }
   &__btnPay {
     padding: 10px 25px;
-    background: $green;
+    background: $color-main;
     text-decoration: none;
-    color: #fff;
+    color: $green;
     border-radius: 30px;
+    font-weight: 800;;
     cursor: pointer;
   }
 }

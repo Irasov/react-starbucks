@@ -2,7 +2,7 @@ export type Coffee = {
   id: string;
   imageUrl: string;
   title: string;
-  sizes: number;
+  sizes: string;
   price: number;
   category: number;
   text: string;

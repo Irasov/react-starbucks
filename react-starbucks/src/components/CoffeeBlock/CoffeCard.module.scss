@@ -1,5 +1,5 @@
 .item {
-  padding: 6px 31px 31px 31px ;
+  padding: 6px 21px 31px 21px ;
   max-width: 257px;
   display: flex;
   flex-direction: column;
@@ -71,8 +71,10 @@
   align-self: flex-end;
 }
 .btn {
+  display: flex;
+  column-gap: 9px;
   padding: 14.5px 39px;
-  max-width: 186px;
+  width: 198px;
   border-radius: 60px;
   background: linear-gradient(210deg, #237249 0%, #35c66b 100%);
   font-weight: 639;
@@ -81,4 +83,7 @@
   letter-spacing: -0.02em;
   color: #fff;
   cursor: pointer;
+  & i{
+    color: #000
+   }
 }
