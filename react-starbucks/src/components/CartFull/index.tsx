@@ -5,6 +5,7 @@ import CoffeeItem from "../CoffeeItem";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../redux/cart/selectors";
 import { clearItems } from "../../redux/cart/slice";
+import CartEmpty from "../CartEmpty";
 
 const CartFull: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ const CartFull: React.FC = () => {
   const onClickClear = () => {
     dispatch(clearItems());
   }
-
+  if(!totalPrice) {
+    return <CartEmpty />
+  }
   return (
     <div className="root">
       <div className={styles.title}>

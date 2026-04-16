@@ -1,0 +1,29 @@
+.image {
+  margin: 0 auto;
+  max-width: 300px;
+}
+.img {
+  width: 100%;
+}
+.title {
+  @include title(1200px);
+  text-align: center;
+  @media(max-width: 719.98px) {
+    font-size: 40px;
+  }
+}
+
+.go {
+  padding: 40px 0 40px 0;
+  text-align: center;
+}
+
+.link {
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: #FFF;  
+  text-decoration: none;
+  background-color: $green;
+  font-size: 20px;
+  font-weight: 600;
+}
