@@ -5,6 +5,9 @@ import iconUp from "@/assets/img/up.png"
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
+  const up = () => {
+    window.scrollTo(0, 0);
+  }
   return (
     <footer className="footer">
       <div className="container">
@@ -98,7 +101,7 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             </nav>
-            <button className={styles.up}><img src={iconUp} alt="Up" className={styles.iconup} /></button>
+            <button className={styles.up}><img src={iconUp} alt="Up" className={styles.iconup} onClick={up} /></button>
           </div>
           <div className={styles.extra}>
             <a href="tel:+7-999-999-99-99" className={styles.tel}>
