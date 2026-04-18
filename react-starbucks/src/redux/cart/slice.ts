@@ -1,10 +1,8 @@
 import {createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { CartItem } from './type';
+import type { CartItem, CartSliceState } from './type';
+import { getCartFromLS } from '../../utils/getCartFromLS';
 
-const initialState = { 
-  totalPrice: 0,
-  items: [] as CartItem[],
-}
+const initialState: CartSliceState = getCartFromLS();
 
 export const cartSlice = createSlice({
   name: 'cart',

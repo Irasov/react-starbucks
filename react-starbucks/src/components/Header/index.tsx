@@ -11,6 +11,7 @@ const Header: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const [active, setActive] = React.useState(false);
   const totalCount = items.reduce((sum: number, item) => sum + item.count, 0);
+  const isMounted = React.useRef(false);
 
   const iconClick = () => {
     setActive((prev)=> !prev);
@@ -36,6 +37,14 @@ const Header: React.FC = () => {
       window.removeEventListener("resize", handleResize);
     }
   }, []);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('cart', json);
+    }
+    isMounted.current = true;
+  },[items])
 
   return (
     <header className="header">
