@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import {useParams, useNavigate} from "react-router-dom";
 import Loading from "../components/CoffeeFull/loading";
+import CoffeeFull from "../components/CoffeeFull";
 
 const FullCoffee: React.FC = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const FullCoffee: React.FC = () => {
   const [coffee, setCoffee] = React.useState<{
     imageUrl: string,
     title: string,
-    size: string,
+    sizes: string,
     price: number,
     text: string,
   }>();
@@ -34,9 +35,7 @@ const FullCoffee: React.FC = () => {
 
   return (
     <main className="mainpage">
-      <img src={coffee.imageUrl} alt='coffee' />
-      <h1>{coffee.title}</h1>
-      <p>{coffee.text}</p>
+      <CoffeeFull key={id} {...coffee}/>
     </main>
   )
 }
