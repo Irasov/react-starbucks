@@ -4,6 +4,7 @@ import { type CartItem } from "../../redux/cart/type";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/cart/slice";
 import { selectCartById } from "../../redux/cart/selectors";
+import { Link } from "react-router-dom";
 
 type CoffeeBlockProps = {
   id: string,
@@ -33,9 +34,11 @@ const CoffeCard: React.FC<CoffeeBlockProps> = ({id, imageUrl, title, sizes, pric
   }
   return (
     <div className={styles.item}>
-      <div className={styles.image}>
-        <img src={imageUrl} alt="Coffee" className={styles.img} />
-      </div>
+      <Link key={id} to={`/coffee/${id}`}>
+        <div className={styles.image}>
+          <img src={imageUrl} alt="Coffee" className={styles.img} />
+        </div>
+      </Link>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.text}>{text}</p>
       <div className={styles.info}>
