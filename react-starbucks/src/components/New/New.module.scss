@@ -1,0 +1,31 @@
+.body {
+  padding: 0 0 100px 0;
+  @media(max-width: 719.98px) {
+    padding: 23px 0 40px 0;
+  }
+}
+.info {
+  display: flex;
+  column-gap: 72px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+  @media(max-width: 990.98px) {
+    justify-content: center;
+  }
+}
+.title {
+  @include title(392px);
+  flex: 0 1 392px;
+  @media(max-width: 719.98px) {
+    font-size: 48px;
+  }
+}
+.text {
+  flex: 0 1  444px;
+  max-width: 444px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 163%;
+  letter-spacing: -0.02em;
+  align-self: center;
+}
