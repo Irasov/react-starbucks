@@ -5,6 +5,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import axios from "axios";
 import CoffeCard from "../CoffeeBlock/CoffeCard";
+import iconNext from "@/assets/img/next.png"
 
 type CoffeItem = {
   id: string,
@@ -19,6 +20,7 @@ type CoffeItem = {
 const New: React.FC = () => {
 
   const [coffee, setCoffee] = React.useState<CoffeItem[]>([]);
+  const [error, setError] = React.useState(false);
 
   React.useEffect(()=>{
     async function fetchCoffee() {
@@ -27,12 +29,19 @@ const New: React.FC = () => {
         setCoffee(data)
       } catch (err) {
         console.error(err);
+        setError(true);
       }
     };
     fetchCoffee();
   },[]);
 
-  const slides = coffee.map((item) => (
+  const filterCoffee = coffee.filter((item)=> {
+    if(item.category > 2) {
+      return item;
+    }
+  })
+
+  const slides = filterCoffee.map((item) => (
     <SwiperSlide key={item.id}>
       <CoffeCard {...item} />
     </SwiperSlide>
@@ -52,26 +61,40 @@ const New: React.FC = () => {
               Starbucks coffee and don't forget about the discount!
             </p>
           </div>
-            <Swiper
-              modules={[Pagination, Navigation]}
-              direction = 'horizontal'
-              slidesPerView = {3}
-              loop = {true}
-              // breakpoints={{
-              //   // when window width is >= 640px
-              //   640: {
-              //     width: 640,
-              //     slidesPerView: 2,
-              //   },
-              //   // when window width is >= 768px
-              //   768: {
-              //     width: 768,
-              //     slidesPerView: 3,
-              //   },
-              // }}
-            >
-              {slides}
-            </Swiper>
+            <div className={styles.swiper__container}>
+              <Swiper
+                className="coffee-slider"
+                modules={[Pagination, Navigation]}
+                direction = 'horizontal'
+                slidesPerView = {3}
+                loop = {true} 
+                navigation= {{
+                  nextEl: '.swiper__next',
+                  prevEl: '.swiper__prev',
+                }}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                  },
+                  // when window width is >= 640px
+                  730: {
+                    slidesPerView: 2,
+                  },
+                  // when window width is >= 768px
+                  880: {
+                    slidesPerView: 3,
+                  },
+
+                }}
+              >
+                {error ? 'Unable to get coffee...' : slides}
+              </Swiper>
+              <div className={styles.control}>
+                <div className="swiper__next">
+                  <img src={iconNext} alt="NEXT" />
+                </div>
+              </div>
+            </div>
             <div className="swiper-pagination"></div>
             <div className="swiper-button-prev"></div>
             <div className="swiper-button-next"></div>
