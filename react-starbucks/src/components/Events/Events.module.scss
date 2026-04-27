@@ -1,0 +1,28 @@
+.info {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 72px;
+  @media(max-width: 719.98px) {
+    flex-direction: column-reverse;
+    row-gap: 20px;
+  }
+}
+
+.subtitle {
+  max-width: 457px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 163%;
+  letter-spacing: -0.02em;
+  align-self: center;
+  @media(max-width: 719.98px) {
+    align-self: stretch;
+  }
+}
+
+.title {
+  @include title(366px);
+  @media(max-width: 719.98px) {
+    font-size: 48px;
+  }
+}
