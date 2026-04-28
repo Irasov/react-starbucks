@@ -18,10 +18,38 @@ const Events: React.FC = () => {
           </div>
           <div className={styles.block}>
             <div className={styles.block__up}>
-
+              <div className={`${styles.item__up} ${styles.item__up_one}`}>
+                <div className={styles.title_item}>
+                  TWO COFFEE FOR 1 PRICE
+                </div>
+                <a href="#" className={styles.btn_item}>More</a>
+              </div>
+              <div className={`${styles.item__up} ${styles.item__up_two}`}>
+                <div className={styles.title_item}>
+                  KITCHEN TOUR
+                </div>
+                <a href="#" className={styles.btn_item}>More</a>
+              </div>
             </div>
             <div className={styles.block__down}>
-
+              <div className={`${styles.item__down} ${styles.item__down_one}`}>
+                <div className={styles.title_item}>
+                  FREE COFFEE FOR 3 COFFEE
+                </div>
+                <a href="#" className={styles.btn_item}>More</a>
+              </div>
+              <div className={`${styles.item__down} ${styles.item__down_two}`}>
+                <div className={styles.title_item}>
+                  OUR INSTAGRAM
+                </div>
+                <a href="#" className={styles.btn_item}>More</a>
+              </div>
+              <div className={`${styles.item__down} ${styles.item__down_three}`}>
+                <div className={`${styles.title_item} ${styles.title_item_big}`}>
+                  WHERE ARE YOU CHOOSE US?
+                </div>
+                <a href="#" className={styles.btn_item}>More</a>
+              </div>
             </div>
           </div>
         </div>

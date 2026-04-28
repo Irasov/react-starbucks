@@ -5,6 +5,7 @@
   @media(max-width: 719.98px) {
     flex-direction: column-reverse;
     row-gap: 20px;
+    align-items: center; 
   }
 }
 
@@ -16,7 +17,7 @@
   letter-spacing: -0.02em;
   align-self: center;
   @media(max-width: 719.98px) {
-    align-self: stretch;
+    font-size: 14px;
   }
 }
 
@@ -24,5 +25,106 @@
   @include title(366px);
   @media(max-width: 719.98px) {
     font-size: 48px;
+  }
+}
+.block {
+  padding: 54px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.block__up {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 25px;
+  @media(max-width: 719.98px) {
+    flex-direction: column;
+    //align-items: flex-start;
+    //justify-content: flex-start;
+  }
+}
+
+.item__up {
+  padding: 44px 0 27px 28px;
+  flex: 0 1 612px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 44px;
+  border-radius: 30px;
+  @media(max-width: 719.98px) {
+    flex: none;
+    max-width: 612px;
+  }
+  &_one {
+    background: url('../../assets/img/item2.jpg')  no-repeat;
+    background-position: center;
+    object-fit: cover;
+  }
+  &_two {
+    background: url('../../assets/img/item1.jpg')  no-repeat;
+    background-position: center;
+    object-fit: cover;
+  }
+}
+
+.title_item {
+  max-width: 240px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 109%;
+  color: #fff;
+  &_big {
+    max-width: 296px
+  }
+  @media(max-width: 719.98px) {
+    font-size: 24px;
+  }
+}
+
+.btn_item {
+  padding: 20px 55px;
+  align-self: flex-start;
+  border-radius: 83px;
+  background: linear-gradient(245deg, #237249 0%, #35c66b 100%);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 146%;
+  letter-spacing: -0.03em;
+  color: #d9d9d9;
+  cursor: pointer;
+  @media(max-width: 719.98px) {
+    font-size: 18px;
+    padding: 10px 35px;
+  }
+}
+
+.block__down {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 24px;
+}
+
+.item__down {
+  padding: 44px 0 23px 23px;
+  flex: 0 1 401px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 44px;
+  border-radius: 30px;
+  &_one {
+    background: url('../../assets/img/item1.jpg') no-repeat;
+    background-position: center;
+    object-fit: cover;
+  }
+  &_two {
+    background: url('../../assets/img/item1.jpg') no-repeat;
+    background-position: center;
+    object-fit: cover;
+  }
+  &_three {
+    background: url('../../assets/img/item1.jpg') no-repeat;
+    background-position: center;
+    object-fit: cover;
   }
 }
