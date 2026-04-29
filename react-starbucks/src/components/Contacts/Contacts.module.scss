@@ -1,0 +1,82 @@
+.body {
+  padding: 0 0 80px 0;
+  display: flex;
+  justify-content: space-between;
+  @media(max-width: 899.98px) {
+    padding: 0 0 40px 0;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 52px;
+  justify-content: center;
+ @media(max-width: 719.98px) {
+    row-gap: 32px;
+  }
+}
+
+.title {
+  @include title(365px);
+  @media(max-width: 719.98px) {
+    font-size: 48px;
+  }
+}
+
+.subtitle {
+  max-width: 387px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 163%;
+  letter-spacing: -0.02em;
+  @media(max-width: 719.98px) {
+    font-size: 18px;
+  }
+}
+
+.link {
+  padding: 0 0 0 70px;
+  position: relative;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 132%;
+  color: #fff;
+  @media(max-width: 719.98px) {
+    font-size: 24px;
+  }
+  &_inst::before {
+    content:  "";
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../../assets/img/instagram.png') center/cover no-repeat;
+    @media(max-width: 719.98px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &_tel::before {
+    content:  "";
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../../assets/img/phone.png') center/cover no-repeat;
+    @media(max-width: 719.98px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.cover {
+  max-width: 477px;
+}
+.img {
+  width: 100%;
+}

@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     window.scrollTo(0, 0);
   }
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <div className="container">
         <div className={styles.body}>
           <div className={styles.block}>
