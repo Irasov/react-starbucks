@@ -9,6 +9,7 @@ const FullCoffee: React.FC = () => {
   const navigate = useNavigate();
 
   const [coffee, setCoffee] = React.useState<{
+    id: string,
     imageUrl: string,
     title: string,
     sizes: string,

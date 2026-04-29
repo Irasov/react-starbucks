@@ -35,9 +35,21 @@
   text-align: center;
 }
 
-.button {
+.buttons {
   padding: 50px 0 20px 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  column-gap: 20px;
+  @media(max-width: 399.98px) {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+}
+
+.button {
   text-align: center;
+  align-items: flex-start;
 }
 
 .btn {
@@ -45,4 +57,21 @@
   background-color: $green;
   color: #FFF;
   border-radius: 30px;
+}
+
+.buy {
+  padding: 10px 25px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: $green;
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  span {
+    padding: 0 0 0 5px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+  }
 }
