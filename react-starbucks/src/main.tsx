@@ -7,7 +7,7 @@ import { store } from './redux/store';
 import './styles/index.scss';
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/react-starbucks/'>
     <StrictMode>
       <Provider store={store}>
         <App />

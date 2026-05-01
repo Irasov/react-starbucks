@@ -6,12 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "homepage": "https://irasov.github.io/react-starbucks/"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "axios": "^1.14.0",
+    "gh-pages": "^6.3.0",
     "lodash.debounce": "^4.0.8",
     "qs": "^6.15.1",
     "react": "^19.2.4",
