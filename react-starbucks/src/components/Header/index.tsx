@@ -41,7 +41,7 @@ const Header: React.FC = () => {
   React.useEffect(() => {
     if (isMounted.current) {
       const json = JSON.stringify(items);
-      localStorage.setItem('cart', json);
+      localStorage.setItem('coffee', json);
     }
     isMounted.current = true;
   },[items])
