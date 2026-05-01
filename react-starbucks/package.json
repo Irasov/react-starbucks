@@ -1,20 +1,22 @@
 {
   "name": "react-starbucks",
+  "homepage": "https://irasov.github.io/react-starbucks/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "copy404": "copy dist\\index.html dist\\404.html",
+    "predeploy": "npm run build && npm run copy404",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "homepage": "https://irasov.github.io/react-starbucks/"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "axios": "^1.14.0",
+    "cpy-cli": "^7.0.0",
     "gh-pages": "^6.3.0",
     "lodash.debounce": "^4.0.8",
     "qs": "^6.15.1",
